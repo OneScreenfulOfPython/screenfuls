@@ -24,7 +24,14 @@ Instructions
   free to showcase something specific if that makes sense. Some of
   the teachers will be limited as to target platform; others won't.
 
-* If appropriate, include a pip requirements.txt
+* Pure-stdlib solutions are definitely good, but there's no problem
+  with pulling in external modules. If appropriate, include a pip
+  requirements.txt
+
+* Try to keep the root of your directory uncluttered: just the
+  README.txt and the code itself plus any necessary media.
+  Use a subdirectory for screenshots or further explanations.
+  Keep it simple.
 
 Remember
 --------
@@ -35,3 +42,10 @@ package dependencies, nor in understanding the argot of the
 programmer's trade.
 
 Keep it simple. If in doubt, err on the side of an Dummy's Guide.
+
+Not Sure
+--------
+
+* Specify PEP8?
+* Tests?
+* Common modules?
