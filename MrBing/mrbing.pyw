@@ -1,3 +1,4 @@
+import sys
 import pygame
 
 #
@@ -11,19 +12,19 @@ pygame.init()
 movement = [1, 1]
 speed = 1
 background_colour = pygame.Color("black")
-ball = pygame.image.load("mrbing.png")
+mrbing = pygame.image.load("mrbing.png")
 ding = pygame.mixer.Sound("ding.wav")
 
 size = width, height = 300, 200
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Mr Bing is Great")
 
-location = ball.get_rect()
+location = mrbing.get_rect()
 clock = pygame.time.Clock()
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            raise SystemExit
+            sys.exit()
 
     location = location.move([speed * distance for distance in movement])
     if location.left < 0 or location.right > width:
@@ -34,6 +35,6 @@ while True:
         movement[1] = -movement[1]
 
     screen.fill(background_colour)
-    screen.blit(ball, location)
+    screen.blit(mrbing, location)
     pygame.display.flip()
     clock.tick(60)
