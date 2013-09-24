@@ -1,15 +1,15 @@
 15-lines
 ========
 
-Examples of useful code using just 15 lines of Python
+Examples of useful code using just one screenful of Python
 
 Background
 ----------
 
-At PyConUK 2013, we were told that 15 lines of code was the right size
+At PyConUK 2013, we were told that a screenful of code was the right size
 for a Secondary School teacher to git nicely into one lesson plan. So
 we were asked to produce whatever code we could -- ideally doing something
-awesome -- in just 15 lines of Python.
+awesome -- in just one screenful of Python.
 
 Instructions
 ------------
