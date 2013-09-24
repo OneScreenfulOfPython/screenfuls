@@ -1,5 +1,5 @@
-15-lines
-========
+Screenfuls
+==========
 
 Examples of useful code using just one screenful of Python
 
