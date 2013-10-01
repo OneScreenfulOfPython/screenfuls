@@ -14,7 +14,7 @@ awesome -- in just one screenful of Python.
 Instructions
 ------------
 
-* Create a folder called MyAwesomeExample or whatever
+* Create a folder called MyExample or whatever
 
 * Include a README.txt which includes a useful description
   of what the example does / shows plus an indication of any
