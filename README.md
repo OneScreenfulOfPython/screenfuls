@@ -41,7 +41,7 @@ job is teaching, not delighting in the intracacies of Python
 package dependencies, nor in understanding the argot of the
 programmer's trade.
 
-Keep it simple. If in doubt, err on the side of an Dummy's Guide.
+Keep it simple. If in doubt, err on the side of a Dummy's Guide.
 
 Not Sure
 --------
