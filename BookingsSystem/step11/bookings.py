@@ -285,7 +285,7 @@ def add_user(environ):
     form = cgi.FieldStorage(fp=environ['wsgi.input'], environ=environ.copy(), keep_blank_values=True)
     add_user_to_database(form.getfirst("name"), form.getfirst('email_address', ""))
 
-def add_user(environ):
+def add_room(environ):
     form = cgi.FieldStorage(fp=environ['wsgi.input'], environ=environ.copy(), keep_blank_values=True)
     add_room_to_database(form.getfirst("name"), form.getfirst('location', None))
 
@@ -323,7 +323,7 @@ def webapp(environ, start_response):
         headers.append(("Location", "/users"))
         data = ""
     elif param1 == "add-room":
-        add_user(environ)
+        add_room(environ)
         status = "301 Redirect"
         headers.append(("Location", "/rooms"))
         data = ""
