@@ -26,13 +26,13 @@ Steps -- each intended to be a screenful
 
 5) Refactor the database queries to use common functionality
 
-5) Create a simple website with just a front page
+6) Create a simple website with just a front page
 
-6) Add /users to list users
+7) Add /users to list users & /rooms to list rooms
 
-7) Add /rooms to list rooms
+8) Refactor the HTML pages to use common functionality
 
-8) Add /bookings to list bookings
+9) Add /bookings to list bookings for a user or a room
 
 Hints:
 
