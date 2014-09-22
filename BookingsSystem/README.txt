@@ -20,15 +20,19 @@ Steps -- each intended to be a screenful
 
 2) Populate with some sample data: users, rooms, bookings
 
-3) Create simple functions for accessing the database
+3) Create simple functions for accessing users & rooms
 
-4) Create a simple website with just a front page
+4) Create simple functions for accessing bookings via users & rooms
 
-5) Add /users to list users
+5) Refactor the database queries to use common functionality
 
-6) Add /rooms to list rooms
+5) Create a simple website with just a front page
 
-7) Add /bookings to list bookings
+6) Add /users to list users
+
+7) Add /rooms to list rooms
+
+8) Add /bookings to list bookings
 
 Hints:
 
