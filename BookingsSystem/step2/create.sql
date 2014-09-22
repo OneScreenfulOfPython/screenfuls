@@ -30,7 +30,9 @@ CREATE TABLE
 CREATE VIEW
     v_bookings
 AS SELECT
+    boo.user_id,
     usr.name AS user_name,
+    boo.room_id,
     roo.name AS room_name,
     boo.booked_on,
     boo.booked_from,
