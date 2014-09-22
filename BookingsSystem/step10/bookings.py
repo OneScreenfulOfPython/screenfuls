@@ -142,18 +142,9 @@ def get_bookings_for_room(room_id):
 def add_user_to_database(name, email_address):
     """Add a user to the database
     """
-    print("%r, %r" % (name, email_address))
     execute(
         "INSERT INTO users(name, email_address) VALUES (?, ?)",
         [name, email_address]
-    )
-
-def add_room_to_database(name, location):
-    """Add a user to the database
-    """
-    execute(
-        "INSERT INTO rooms(name, location) VALUES (?, ?)",
-        [name, location]
     )
 
 def page(title, content):
