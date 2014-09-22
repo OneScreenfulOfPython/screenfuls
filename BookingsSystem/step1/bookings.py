@@ -50,4 +50,6 @@ def create_database():
     db.close()
 
 if __name__ == '__main__':
+    print("About to create database %s" % DATABASE_FILEPATH)
     create_database()
+    print("Finished")

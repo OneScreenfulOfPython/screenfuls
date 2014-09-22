@@ -26,3 +26,19 @@ CREATE TABLE
     booked_to TIME NULL
 )
 ;
+
+CREATE VIEW
+    v_bookings
+AS SELECT
+    usr.name AS user_name,
+    roo.name AS room_name,
+    boo.booked_on,
+    boo.booked_from,
+    boo.booked_to
+FROM
+    bookings AS boo
+JOIN users AS usr ON
+    usr.id = boo.user_id
+JOIN rooms AS roo ON
+    roo.id = boo.room_id
+;

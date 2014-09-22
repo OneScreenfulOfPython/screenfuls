@@ -29,3 +29,10 @@ Steps -- each intended to be a screenful
 6) Add /rooms to list rooms
 
 7) Add /bookings to list bookings
+
+Hints:
+
+* You can use the sqlite ".dump" command to quickly see the database contents:
+
+  sqlite bookings.db .dump
+

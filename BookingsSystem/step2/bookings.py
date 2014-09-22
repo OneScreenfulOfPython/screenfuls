@@ -88,5 +88,8 @@ def populate_database():
     db.close()
 
 if __name__ == '__main__':
+    print("About to create database %s" % DATABASE_FILEPATH)
     create_database()
+    print("About to populate database %s" % DATABASE_FILEPATH)
     populate_database()
+    print("Finished")
