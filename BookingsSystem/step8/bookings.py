@@ -124,27 +124,21 @@ def get_bookings_for_room(room_id):
     """
     return select("SELECT * FROM v_bookings WHERE room_id = ?", [room_id])
 
-def index_page(environ):
-    return """<html>
-    <head>
-    <title>Room Booking System</title>
-    </head>
-    <body>
-    <h1>Room Booking System</h1>
-        <ul>
-            <li><a href="/users">Users</a></li>
-            <li><a href="/rooms">Rooms</a></li>
-            <li><a href="/bookings">Bookings</a></li>
-        </ul>
-    </body>
-    </html>
-    """
-
 def page(title, content):
     return """
     <html>
     <head>
     <title>Room Booking System: {title}</title>
+    <style>
+    body {{
+        background-colour : #cff;
+        margin : 1em;
+        padding : 1em;
+        border : thin solid black;
+        font-family : sans-serif;
+    }}
+
+    </style>
     </head>
     <body>
     <h1>{title}</h1>
@@ -152,6 +146,16 @@ def page(title, content):
     </body>
     </html>
     """.format(title=title, content=content)
+
+def index_page(environ):
+    html = """
+    <ul>
+        <li><a href="/users">Users</a></li>
+        <li><a href="/rooms">Rooms</a></li>
+        <li><a href="/bookings">Bookings</a></li>
+    </ul>
+    """
+    return page("Starting Page", html)
 
 def users_page(environ):
     html = "<ul>"
