@@ -34,6 +34,14 @@ Steps -- each intended to be a screenful
 
 9) Add /bookings to list bookings for a user or a room
 
+10) Add a user
+
+11) Add a room
+
+12) Add a booking (of a room by a user)
+
+13) Add a booking (by a user of a room)
+
 Hints:
 
 * You can use the sqlite ".dump" command to quickly see the database contents:
