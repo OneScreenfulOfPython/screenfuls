@@ -125,6 +125,9 @@ def get_bookings_for_room(room_id):
     return select("SELECT * FROM v_bookings WHERE room_id = ?", [room_id])
 
 def page(title, content):
+    """Return a complete HTML page with the title as the <title> and <h1>
+    tags, and the content within the body, after the <h1>
+    """
     return """
     <html>
     <head>
@@ -148,6 +151,8 @@ def page(title, content):
     """.format(title=title, content=content)
 
 def index_page(environ):
+    """Provide a list of all the pages
+    """
     html = """
     <ul>
         <li><a href="/users">Users</a></li>
@@ -158,6 +163,8 @@ def index_page(environ):
     return page("Starting Page", html)
 
 def users_page(environ):
+    """Provide a list of all the users, linking to their bookings
+    """
     html = "<ul>"
     for user in get_users():
         html += '<li><a href="/bookings/user/{id}">{name}</a> ({email_address})</li>\n'.format(
@@ -169,6 +176,8 @@ def users_page(environ):
     return page("Users", html)
 
 def rooms_page(environ):
+    """Provide a list of all the rooms, linking to their bookings
+    """
     html = "<ul>"
     for room in get_rooms():
         html += '<li><a href="/bookings/room/{id}">{name}</a> ({location})</li>\n'.format(
@@ -205,6 +214,8 @@ def webapp(environ, start_response):
         data = users_page(environ)
     elif param1 == "rooms":
         data = rooms_page(environ)
+    elif param1 == "bookings":
+        data = bookings_page(environ)
     else:
         status = '404 Not Found'
         data = "Not Found: %s" % param1
