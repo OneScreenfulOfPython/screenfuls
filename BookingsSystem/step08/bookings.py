@@ -215,8 +215,6 @@ def webapp(environ, start_response):
         data = users_page(environ)
     elif param1 == "rooms":
         data = rooms_page(environ)
-    elif param1 == "bookings":
-        data = bookings_page(environ)
     else:
         status = '404 Not Found'
         data = "Not Found: %s" % param1

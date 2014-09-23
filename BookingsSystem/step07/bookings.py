@@ -209,7 +209,6 @@ def webapp(environ, start_response):
     # be "/1/bookings".
     #
     param1 = shift_path_info(environ)
-    print("param1=", param1)
     if param1 == "":
         data = index_page(environ)
     elif param1 == "users":

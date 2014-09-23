@@ -4,7 +4,7 @@ because it's a fairly decent technique to pull text in and execute it against
 the database.
 
 You could do the same thing (and more easily) via the command-line if you
-had access to the sqlite.exe:
+had access to the sqlite.exe executable:
 
 sqlite < create.sql
 
