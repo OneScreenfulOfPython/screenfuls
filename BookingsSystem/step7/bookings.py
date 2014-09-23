@@ -10,18 +10,19 @@ from wsgiref.simple_server import make_server
 # sqlite3 will just accept anything.
 #
 DATABASE_FILEPATH = "bookings.db"
-#
-# Since we might be re-running this, delete the file and rebuild
-# it if necessary.
-#
-if os.path.exists(DATABASE_FILEPATH):
-    os.remove(DATABASE_FILEPATH)
 
 def create_database():
     """Connect to the database, read the CREATE statements and split
     them at the semicolon into individual statements. Once each
     statement has been executed, close the connection.
     """
+    #
+    # Since we might be re-running this, delete the file and rebuild
+    # it if necessary.
+    #
+    if os.path.exists(DATABASE_FILEPATH):
+        os.remove(DATABASE_FILEPATH)
+
     #
     # A database cursor the the Python mechanism for running something
     # against any database. You create a cursor and then .execute

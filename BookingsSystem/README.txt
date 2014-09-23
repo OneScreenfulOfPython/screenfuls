@@ -4,23 +4,40 @@ Meta-Requirement:
 
 * Only use built-in modules but suggest alternatives
 
-Requirements:
+* Run unchanged on Python 2 and 3
+
+* Run unchanged on any Python-supported platform (esp. including RPi)
+
+* Keep core code simple, without using any more sophisticated Python idioms,
+  but suggest alternatives / improvements in the step README.
+
+* The module should remain import-table to allow for experimentation
+
+Project Requirements:
 
 * People have names & email addresses
 
 * Rooms have names and locations
 
-* Bookings are made by one person for one room between Time A and Time B
+* Bookings are made by one person for one room on one day between Time A and Time B
 
 * There should be a usable interface to book rooms / view room bookings
 
-Steps -- each intended to be a screenful
+Steps -- each intended to be about a screenful. Each step leaves the
+application in a "working" state, albeit not necessarily a very interesting
+one, at least at first.
 
-1) Create the empty database
+1)  Create the empty database
 
-2) Populate with some sample data: users, rooms, bookings
+    Result: bookings.db is created with the appropriate tables & views
 
-3) Create simple functions for accessing users & rooms
+2)  Populate with some sample data: users, rooms, bookings
+
+    The database contains a few test users, rooms & bookings
+
+3)  Create simple functions for accessing users & rooms
+
+    functions get
 
 4) Create simple functions for accessing bookings via users & rooms
 
