@@ -233,7 +233,7 @@ def rooms_page(environ):
     html += "<hr/>"
     html += """<form method="POST" action="/add-room">
     <label for="name">Name:</label>&nbsp;<input type="text" name="name"/>
-    <label for="location">Email:</label>&nbsp;<input type="text" name="location"/>
+    <label for="location">Location:</label>&nbsp;<input type="text" name="location"/>
     <input type="submit" name="submit" value="Add Room"/>
     </form>"""
     return page("Rooms", html)

@@ -143,6 +143,11 @@ def get_rooms():
     """
     return select("SELECT * FROM rooms")
 
+def get_bookings():
+    """Get all the bookings ever made
+    """
+    return select("SELECT * FROM v_bookings")
+
 def get_bookings_for_user(user_id):
     """Get all the bookings made by a user
     """
@@ -262,6 +267,45 @@ def rooms_page(environ):
     </form>"""
     return page("Rooms", html)
 
+def all_bookings_page(environ):
+    """Provide a list of all bookings
+    """
+    html = "<table>"
+    html += "<tr><td>Room</td><td>User</td><td>Date</td><td>Times</td></tr>"
+    for booking in get_bookings():
+        html += "<tr><td>{user_name}</td><td>{room_name}</td><td>{booked_on}</td><td>{booked_from} - {booked_to}</td></tr>".format(
+            user_name=booking['user_name'],
+            room_name=booking['room_name'],
+            booked_on=booking['booked_on'],
+            booked_from=booking['booked_from'] or "",
+            booked_to=booking['booked_to'] or ""
+        )
+    html += "</table>"
+
+    html += "<hr/>"
+    html += '<form method="POST" action="/add-booking">'
+
+    html += '<label for="user_id">User:</label>&nbsp;<select name="user_id">'
+    for user in get_users():
+        html += '<option value="{id}">{name}</option>'.format(**user)
+    html += '</select>'
+
+    html += '&nbsp;|&nbsp;'
+
+    html += '<label for="room_id">Room:</label>&nbsp;<select name="room_id">'
+    for room in get_rooms():
+        html += '<option value="{id}">{name}</option>'.format(**room)
+    html += '</select>'
+
+    html += '&nbsp;|&nbsp;'
+    html += '<label for="booked_on">On</label>&nbsp;<input type="text" name="booked_on" value="{today}"/>'.format(today=datetime.date.today())
+    html += '&nbsp;<label for="booked_from">between</label>&nbsp;<input type="text" name="booked_from" />'
+    html += '&nbsp;<label for="booked_to">and</label>&nbsp;<input type="text" name="booked_to" />'
+    html += '<input type="submit" name="submit" value="Add Booking"/></form>'
+
+    return page("All Bookings", html)
+
+
 def bookings_user_page(environ):
     """Provide a list of bookings by user, showing room and date/time
     """
@@ -325,7 +369,9 @@ def bookings_page(environ):
     the other thing (room or user) and the date/time
     """
     category = shift_path_info(environ)
-    if category == "user":
+    if not category:
+        return all_bookings_page(environ)
+    elif category == "user":
         return bookings_user_page(environ)
     elif category == "room":
         return bookings_room_page(environ)

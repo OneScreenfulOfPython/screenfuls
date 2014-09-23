@@ -65,6 +65,8 @@ one, at least at first.
 
 13) Add a booking (by a user of a room)
 
+14) Show all bookings and allow additions
+
 Hints:
 
 * You can use the sqlite ".dump" command to quickly see the database contents:
