@@ -170,7 +170,7 @@ def add_room_to_database(name, location):
         [name, location]
     )
 
-def add_booking_to_database(user_id, room_id, booked_on, booked_from, booked_to):
+def add_booking_to_database(user_id, room_id, booked_on, booked_from=None, booked_to=None):
     """Add a booking to the database
     """
     execute(

@@ -1,17 +1,29 @@
-Build a booking system (ostensibly for Rooms but could be for anything: gym equipment, library books etc.).
+Build a booking system (ostensibly for Rooms but could be for
+anything: gym equipment, library books etc.).
 
 Meta-Requirement:
 
-* Only use built-in modules but suggest alternatives
+* Only use built-in modules (but suggest alternatives)
 
 * Run unchanged on Python 2 and 3
 
 * Run unchanged on any Python-supported platform (esp. including RPi)
 
 * Keep core code simple, without using any more sophisticated Python idioms,
-  but suggest alternatives / improvements in the step README.
+  but suggest alternatives / improvements.
 
-* The module should remain import-table to allow for experimentation
+* Remain import-table to allow for experimentation. This is especially
+  useful as it makes it possible to experiment easily at the command
+  line, eg:
+
+  import bookings
+
+  bookings.create_database()
+  bookings.populate_database()
+  print(bookings.get_user(1))
+  print(bookings.get_room(1))
+  bookings.add_booking_to_database(1, 1, '2014-11-18', '12:00')
+
 
 Project Requirements:
 
@@ -27,17 +39,11 @@ Steps -- each intended to be about a screenful. Each step leaves the
 application in a "working" state, albeit not necessarily a very interesting
 one, at least at first.
 
-1)  Create the empty database
+1) Create the empty database
 
-    Result: bookings.db is created with the appropriate tables & views
+2) Populate with some sample data: users, rooms, bookings
 
-2)  Populate with some sample data: users, rooms, bookings
-
-    The database contains a few test users, rooms & bookings
-
-3)  Create simple functions for accessing users & rooms
-
-    functions get
+3) Create simple functions for accessing users & rooms
 
 4) Create simple functions for accessing bookings via users & rooms
 
