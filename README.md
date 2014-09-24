@@ -67,6 +67,8 @@ Ideas
 -----
 
 * Meta-idea: use the GitHub issue tracker for ideas
+* Meta-idea: use readthedocs for documentation (or, at least, Sphinx)
+
 * Race-condition: Demonstrate two processes running simultaneously, each trying to delete the same file. LBYL vs EAFP
 * Countdown clock: Pygame-based countdown clock with alternative "faces"
 * Password Generator
