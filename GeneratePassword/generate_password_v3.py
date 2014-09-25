@@ -10,17 +10,25 @@ except NameError:
     pass
 
 def get_words_from_file(filepath):
-    word_matcher = re.compile(r"\w{3,}")
-    with open(filepath) as f:
-        return set(w.group() for w in word_matcher.finditer(f.read()))
-
-def generate(password_length):
-    """Generate a password by include enough random
-    characters to meet the password length restriction
+    """Return the set of all words at least three letters
+    long from within a named file.
     """
-    return password
+    with open(filepath) as f:
+        return set(w.group() for w in re.finditer(r"\w{3,}", f.read()))
+
+def generate(filename, password_length, number_of_words):
+    """Generate a password consisting of words from a text, at least
+    as long as password_length.
+    """
+    words = get_words_from_file(filename)
+    word_length = (password_length + 1) // number_of_words
+    suitable_words = list(w for w in words if len(w) == word_length)
+    random.shuffle(suitable_words)
+    return "".join(w.title() for w in suitable_words[:number_of_words])
 
 if __name__ == '__main__':
+    filename = input("Filename: ")
     password_length = int(input("How many letters? "))
-    password = generate(password_length)
+    number_of_words = int(input("How many words? "))
+    password = generate(filename, password_length, number_of_words)
     print("Your password is: {}".format(password))
