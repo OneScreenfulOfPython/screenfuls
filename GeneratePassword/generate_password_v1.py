@@ -30,6 +30,7 @@ def generate(password_length):
     for i in range(password_length):
         #
         # Each time around, add a randomly-chosen character
+        # random.choice picks one from a list
         #
         password += random.choice(valid_characters)
 

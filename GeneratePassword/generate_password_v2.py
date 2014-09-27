@@ -61,7 +61,16 @@ def generate(password_length, at_least_one_letter, at_least_one_number, at_least
     # punctuation.
     #
     characters = list(password)
+    #
+    # random.shuffle shuffles a list *in place*
+    #
     random.shuffle(characters)
+    #
+    # X.join(...) means: return all the strings in (...) joined by X
+    # ", ".join(['Eggs', 'Bacon', 'Beans']) => "Eggs, Bacon, Beans"
+    # But if you want to generate *real* .csv files, use the csv module
+    # because there are lots of corner-cases.
+    #
     password = "".join(characters)
     return password
 

@@ -45,7 +45,13 @@ def generate(filename, password_length, number_of_words):
     # and shuffle it to avoid generating the same password several
     # times.
     #
-    suitable_words = list(w for w in words if len(w) == word_length)
+    # This is a "list comprehension". It's equivalent to:
+    # suitable_words = []
+    # for w in words:
+    #   if length(w) == word_length:
+    #     suitable_words.append(w)
+    #
+    suitable_words = [w for w in words if len(w) == word_length]
     random.shuffle(suitable_words)
     #
     # Then return the right number of words, each starting with a
