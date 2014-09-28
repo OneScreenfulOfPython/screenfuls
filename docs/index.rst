@@ -6,9 +6,6 @@
 One Screenful of Python
 =======================
 
-Screenfuls
-==========
-
 Introduction
 ------------
 
@@ -28,6 +25,42 @@ limitations (more or less strongly-applied are):
 
 * If the code is a longer project, it should be split up into separate
   steps, with each step introducing approximately a screenful of new code.
+
+Current Projects
+----------------
+
+Mr Bing
+~~~~~~~
+
+A simple PyGame example of the "bouncing ball" variety.
+
+* **Code**: https://github.com/OneScreenfulOfPython/screenfuls/tree/master/MrBing
+* **Zip**: https://github.com/OneScreenfulOfPython/screenfuls/archive/master.zip
+
+Biggest File
+~~~~~~~~~~~~
+
+Find the biggest file in a directory
+
+* **Code**: https://github.com/OneScreenfulOfPython/screenfuls/tree/master/BiggestFile
+* **Zip**: https://github.com/OneScreenfulOfPython/screenfuls/archive/master.zip
+
+Generate Password
+~~~~~~~~~~~~~~~~~
+
+Generate a password of a certain length: non-secure; essentially an exercise
+in using the random module.
+
+* **Code**: https://github.com/OneScreenfulOfPython/screenfuls/tree/master/GeneratePassword
+* **Zip**: https://github.com/OneScreenfulOfPython/screenfuls/archive/master.zip
+
+Room-Booking System
+~~~~~~~~~~~~~~~~~~~
+
+Users can book rooms via an RDBMS and a web form
+
+* **Code**: https://github.com/OneScreenfulOfPython/booking-system
+* **Zip**: https://github.com/OneScreenfulOfPython/booking-system/archive/master.zip
 
 Background
 ----------
